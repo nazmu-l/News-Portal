@@ -4,10 +4,14 @@
     padding: 0;
 }
 
-body {
+html, body {
     font-family: 'Open Sans', sans-serif;
     background-color: #FFFBF5;
+    width: 100%;
+    max-width: 100%;
+    /* overflow-x: hidden; */
 }
+
 
 /**
  * Primary : #C2410C (Terracotta)
@@ -117,11 +121,50 @@ body {
 
 /* Navigation Section css End */
 
-/* News Teaker  */
 
-.news__icon {
-    width: 70px;
-    height: 50px;
+
+/* Breaking News Styles */
+.breaking-news-wrapper {
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.breaking-label {
+    background-color: #991b1b;
+    padding: 5px 12px;
+    border-radius: 0px 20px 20px 0px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.ticker-container {
+    position: relative;
+    white-space: nowrap;
+}
+
+#newsTicker {
+    position: relative;
+    animation: ticker 25s linear infinite;
+    display: inline-flex;
+}
+
+/* Moush hover news slide stop */
+.ticker-container:hover #newsTicker {
+    animation-play-state: paused;
+}
+
+#newsTicker li a:hover {
+    text-decoration: underline !important;
+}
+
+/* Smooth Infinite Marquee Animation */
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 
@@ -144,6 +187,8 @@ body {
     max-width: 130px;
     border-radius: 10px;
 }
+
+
 
 
 
